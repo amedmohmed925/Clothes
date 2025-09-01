@@ -85,7 +85,7 @@ const Gallery: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/7679454/pexels-photo-7679454.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="https://i.insider.com/62b5e4639f5e550019aa8898?width=1000&format=jpeg&auto=webp"
                 alt="Production Line 1"
                 className="w-full h-64 object-cover"
               />
@@ -100,7 +100,7 @@ const Gallery: React.FC = () => {
             </div>
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
               <img
-                src="https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src="https://landing-page-backend.s3.ap-south-1.amazonaws.com/blog_page_prodimages/d1e94c61-240d-44a9-adc9-a1009d53c236/shutterstock_155647982_xl.png"
                 alt="Production Line 2"
                 className="w-full h-64 object-cover"
               />

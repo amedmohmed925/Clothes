@@ -178,17 +178,17 @@ const About: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Mission Card */}
-            <div className="group relative">
+            <div className="group relative h-full">
               {/* Hexagonal Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 transform rotate-45 scale-110 opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
               
               {/* Main Card */}
-              <div className="relative bg-white p-8 md:p-10 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2 border border-gray-200 overflow-hidden">
+              <div className="relative bg-white p-8 md:p-10 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2 border border-gray-200 overflow-hidden h-full flex flex-col">
                 {/* Top Accent Bar */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700"></div>
                 
                 {/* Content Container */}
-                <div className="relative z-10">
+                <div className="relative z-10 flex-grow">
                   {/* Icon and Title Row */}
                   <div className="flex items-start justify-between mb-6">
                     <div className="flex items-center">
@@ -215,7 +215,7 @@ const About: React.FC = () => {
                   </p>
 
                   {/* Bottom Pattern */}
-                  <div className="flex justify-end space-x-2">
+                  <div className="flex justify-end space-x-2 mt-auto">
                     <div className="w-3 h-3 bg-blue-200 rounded-full opacity-50"></div>
                     <div className="w-3 h-3 bg-blue-300 rounded-full opacity-50"></div>
                     <div className="w-3 h-3 bg-blue-400 rounded-full opacity-50"></div>
@@ -228,17 +228,17 @@ const About: React.FC = () => {
             </div>
 
             {/* Vision Card */}
-            <div className="group relative">
+            <div className="group relative h-full">
               {/* Hexagonal Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 transform rotate-45 scale-110 opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
               
               {/* Main Card */}
-              <div className="relative bg-white p-8 md:p-10 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2 border border-gray-200 overflow-hidden">
+              <div className="relative bg-white p-8 md:p-10 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2 border border-gray-200 overflow-hidden h-full flex flex-col">
                 {/* Top Accent Bar */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700"></div>
                 
                 {/* Content Container */}
-                <div className="relative z-10">
+                <div className="relative z-10 flex-grow">
                   {/* Icon and Title Row */}
                   <div className="flex items-start justify-between mb-6">
                     <div className="flex items-center">
@@ -265,7 +265,7 @@ const About: React.FC = () => {
                   </p>
 
                   {/* Bottom Pattern */}
-                  <div className="flex justify-end space-x-2">
+                  <div className="flex justify-end space-x-2 mt-auto">
                     <div className="w-3 h-3 bg-blue-200 rounded-full opacity-50"></div>
                     <div className="w-3 h-3 bg-blue-300 rounded-full opacity-50"></div>
                     <div className="w-3 h-3 bg-blue-400 rounded-full opacity-50"></div>
