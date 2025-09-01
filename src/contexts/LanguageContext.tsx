@@ -112,7 +112,7 @@ const translations = {
     'common.requestQuote': 'اطلب عرض سعر',
     'common.whatsapp': 'واتساب',
     'footer.rights': 'جميع الحقوق محفوظة',
-    'footer.company': 'مصنع الملابس المتخصص'
+    'footer.company': 'مصنع الملابس '
   },
   en: {
     // Navigation
@@ -218,7 +218,7 @@ const translations = {
     'common.requestQuote': 'Request Quote',
     'common.whatsapp': 'WhatsApp',
     'footer.rights': 'All Rights Reserved',
-    'footer.company': 'Specialized Clothing Factory'
+    'footer.company': 'Specialized Clothing'
   }
 };
 

@@ -2,6 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Users, Settings, Phone } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import nikeLogo from '../assets/images/nikeLogo.png';
+import adidasLogo from '../assets/images/adidas_logo.svg';
+import pumaLogo from '../assets/images/puma.png';
+import levisLogo from '../assets/images/Levi.png';
+import hmLogo from '../assets/images/H&M.png';
+import zaraLogo from '../assets/images/Zara.png';
 
 const Home: React.FC = () => {
   const { t, isRTL } = useLanguage();
@@ -95,16 +101,28 @@ const Home: React.FC = () => {
       {/* Client Logos Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
             {t('home.clients.title')}
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full mx-auto mb-12"></div>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
-            {Array.from({ length: 6 }, (_, i) => (
+            {[
+              { name: 'Nike', logo: nikeLogo },
+              { name: 'Adidas', logo: adidasLogo },
+              { name: 'Puma', logo: pumaLogo },
+              { name: 'Levi\'s', logo: levisLogo },
+              { name: 'H&M', logo: hmLogo },
+              { name: 'Zara', logo: zaraLogo }
+            ].map((brand, i) => (
               <div
                 key={i}
-                className="bg-gray-100 h-20 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors"
+                className="bg-white h-20 rounded-lg flex items-center justify-center hover:bg-gray-50 transition-colors border border-gray-200"
               >
-                <span className="text-gray-500 font-medium">Brand {i + 1}</span>
+                <img
+                  src={brand.logo}
+                  alt={`${brand.name} logo`}
+                  className="max-h-12 max-w-20 object-contain"
+                />
               </div>
             ))}
           </div>
@@ -114,9 +132,10 @@ const Home: React.FC = () => {
       {/* Call to Action */}
       <section className="py-16 bg-blue-700">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {isRTL ? 'جاهزون لتصنيع ملابسك؟' : 'Ready to Manufacture Your Clothing?'}
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-white to-blue-200 rounded-full mx-auto mb-6"></div>
           <p className="text-xl text-blue-100 mb-8">
             {isRTL 
               ? 'تواصل معنا اليوم واحصل على عرض سعر مجاني'

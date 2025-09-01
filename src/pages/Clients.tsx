@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star } from 'lucide-react';
+import { Star, Users } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const Clients: React.FC = () => {
@@ -32,27 +32,80 @@ const Clients: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 to-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+      <section className="py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-white bg-opacity-10 rounded-full blur-xl"></div>
+          <div className="absolute bottom-20 right-10 w-40 h-40 bg-white bg-opacity-10 rounded-full blur-xl"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-white bg-opacity-5 rounded-full blur-2xl"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-white bg-opacity-20 rounded-full mb-8 backdrop-blur-sm">
+            <Users className="w-10 h-10 text-white" />
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
             {t('clients.title')}
           </h1>
+          <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto leading-relaxed">
+            {t('home.hero.subtitle')}
+          </p>
+          <div className="flex justify-center space-x-4">
+            <div className="flex items-center space-x-2 text-white">
+              <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+              <span className="text-lg font-medium">
+                {t('clients.partners.title')}
+              </span>
+            </div>
+            <div className="flex items-center space-x-2 text-white">
+              <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+              <span className="text-lg font-medium">
+                {t('clients.certificates.title')}
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Client Logos */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
             {t('clients.partners.title')}
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full mx-auto mb-12"></div>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-            {Array.from({ length: 12 }, (_, i) => (
+            {[
+              { name: 'Nike', logo: 'https://logos-world.net/wp-content/uploads/2020/04/Nike-Logo.png' },
+              { name: 'Adidas', logo: 'https://logos-world.net/wp-content/uploads/2020/04/Adidas-Logo.png' },
+              { name: 'Puma', logo: 'https://logos-world.net/wp-content/uploads/2020/04/Puma-Logo.png' },
+              { name: 'Levi\'s', logo: 'https://logos-world.net/wp-content/uploads/2020/04/Levis-Logo.png' },
+              { name: 'H&M', logo: 'https://logos-world.net/wp-content/uploads/2020/04/HM-Logo.png' },
+              { name: 'Zara', logo: 'https://logos-world.net/wp-content/uploads/2020/04/Zara-Logo.png' },
+              { name: 'Gucci', logo: 'https://logos-world.net/wp-content/uploads/2020/04/Gucci-Logo.png' },
+              { name: 'Louis Vuitton', logo: 'https://logos-world.net/wp-content/uploads/2020/04/Louis-Vuitton-Logo.png' },
+              { name: 'Chanel', logo: 'https://logos-world.net/wp-content/uploads/2020/04/Chanel-Logo.png' },
+              { name: 'Prada', logo: 'https://logos-world.net/wp-content/uploads/2020/04/Prada-Logo.png' },
+              { name: 'Tommy Hilfiger', logo: 'https://logos-world.net/wp-content/uploads/2020/04/Tommy-Hilfiger-Logo.png' },
+              { name: 'Ralph Lauren', logo: 'https://logos-world.net/wp-content/uploads/2020/04/Ralph-Lauren-Logo.png' }
+            ].map((brand, index) => (
               <div
-                key={i}
-                className="bg-white h-24 rounded-lg shadow-md flex items-center justify-center hover:shadow-lg transition-shadow duration-300"
+                key={index}
+                className="bg-white h-24 rounded-lg shadow-md flex items-center justify-center hover:shadow-lg transition-shadow duration-300 p-4"
               >
-                <span className="text-gray-500 font-medium">Brand {i + 1}</span>
+                <img
+                  src={brand.logo}
+                  alt={`${brand.name} logo`}
+                  className="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const fallback = target.parentElement?.querySelector('.fallback-text') as HTMLElement;
+                    if (fallback) fallback.style.display = 'block';
+                  }}
+                />
+                <span className="fallback-text text-gray-500 font-medium text-sm" style={{ display: 'none' }}>
+                  {brand.name}
+                </span>
               </div>
             ))}
           </div>
@@ -62,9 +115,10 @@ const Clients: React.FC = () => {
       {/* Quality Certificates */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
             {t('clients.certificates.title')}
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full mx-auto mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {['ISO 9001', 'OEKO-TEX', 'GOTS'].map((cert, index) => (
               <div
@@ -89,9 +143,10 @@ const Clients: React.FC = () => {
       {/* Testimonials */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
             {t('clients.testimonials.title')}
           </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-blue-700 rounded-full mx-auto mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <div
